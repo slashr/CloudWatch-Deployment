@@ -21,14 +21,14 @@ if [ "$base" == "debian" ]
 		if [ $? -eq 0 ]
 			then
                                 echo "Python is already installed. Downloading CloudWatch Deployment Script..."
-				wget <Ubuntu Script URL>
+				wget https://github.com/slashr/CloudWatch-Deployment/blob/master/UbuntuSetup.py
 				python UbuntuSetup.py $1 $2
 		else
 				echo "Installing Python"
 				apt-get update
 				apt-get install -y python $1 $2
                                 echo "Downloading CloudWatch Deployment Script..."
-				wget <Ubuntu Script URL>
+				wget https://github.com/slashr/CloudWatch-Deployment/blob/master/UbuntuSetup.py
                                 python UbuntuSetup.py
 		fi
 
@@ -39,13 +39,13 @@ elif [ "$base" == '"rhel fedora"' ]
 		if [ $? -eq 0 ]
 			then
                                 echo "Python is already installed. Downloading CloudWatch Deployment Script..."
-				wget <AmazonLinux Script URL>
+				wget https://github.com/slashr/CloudWatch-Deployment/blob/master/AmazonLinuxSetup.py
 				python AmazonLinuxSetup.py $1 $2
 		else
 				echo "Installing Python"
 				yum -y install python
                                 echo "Downloading CloudWatch Deployment Script..."
-				wget <AmazonLinux Script URL>
+				wget https://github.com/slashr/CloudWatch-Deployment/blob/master/AmazonLinuxSetup.py
 				python AmazonLinuxSetup.py $1 $2
 		fi
 
@@ -56,13 +56,13 @@ elif [ "$suse_base" == '"sles"' ]
                 if [ $? -eq 0 ]
                         then
                                 echo "Python is already installed. Downloading CloudWatch Deployment Script..."
-                                wget <SUSE Script URL>
+                                wget https://github.com/slashr/CloudWatch-Deployment/blob/master/SUSESetup.py
                                 python SUSESetup.py $1 $2
                 else
                                 echo "Installing Python"
                                 zypper -y install python
                                 echo "Downloading CloudWatch Deployment Script..."
-				wget <SUSE Script URL>
+				wget https://github.com/slashr/CloudWatch-Deployment/blob/master/SUSESetup.py
                                 python SUSESetup.py $1 $2
                 fi
 else
